@@ -18,5 +18,12 @@ class KeyTest < Minitest::Test
     assert_equal "02715", @new_key.key
   end
 
+  def test_key_is_the_right_length
+    assert_equal 5, @new_key.key.length
+  end
+
+  def test_key_can_be_entered_without_generating
+    assert_equal "02715", @new_key.generate_key("02715")
+  end
 
 end
