@@ -18,4 +18,8 @@ class OffsetTest < Minitest::Test
     assert_equal Time.now.strftime("%d%m%y"), @offset.date
   end
 
+  def test_it_can_generate_offset
+    expected = { :A => "4", :B => "4", :C => "0", :D => "0"}
+    assert_equal expected, @offset.generate_offset("130120")
+  end
 end
