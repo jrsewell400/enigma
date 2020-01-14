@@ -3,6 +3,7 @@ class Key
 
   def initialize(key = nil)
     @key = key
+    @key_hash = {:A => "", :B => "", :C => "", :D => ""}
   end
 
   def generate_key(key)
@@ -13,4 +14,12 @@ class Key
     end
   end
 
+  def key_shift(key)
+    @key_hash[:A] += key[0..1]
+    @key_hash[:B] += key[1..2]
+    @key_hash[:C] += key[2..3]
+    @key_hash[:D] += key[3..4]
+    @key_hash
+  end
+  
 end
