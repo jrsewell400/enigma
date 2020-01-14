@@ -26,4 +26,10 @@ class KeyTest < Minitest::Test
     assert_equal "02715", @new_key.generate_key("02715")
   end
 
+  def test_random_key_is_generated_if_incorrect_conditions_met_for_key
+    new_key1 = Key.new("0271")
+    new_key1.generate_key("0271")
+    assert_equal 5, new_key1.key.length
+  end
+
 end
