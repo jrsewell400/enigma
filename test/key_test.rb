@@ -30,6 +30,7 @@ class KeyTest < Minitest::Test
     new_key1 = Key.new("0271")
     new_key1.generate_key("0271")
     assert_equal 5, new_key1.key.length
+    assert_equal Integer, new_key1.key.to_i.class
   end
 
   def test_keys_can_be_shifted
