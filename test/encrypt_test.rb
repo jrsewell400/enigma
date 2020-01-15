@@ -24,7 +24,14 @@ class EncryptTest < Minitest::Test
     assert_equal "040895", @encrypt.date
   end
 
+  def test_string_to_int_converter_method_converts_strings_to_ints
+    hash = { :A => "5" }
+    expected = { :A => 5 }
+    assert_equal expected, @encrypt.string_to_int_converter(hash)
+  end
+
   def test_final_offset_combines_key_and_offset_hashes
+    skip
     expected = { :A => "03", :B => "27", :C => "73", :D => "20" }
     assert_equal expected, @encrypt.final_offset
   end
