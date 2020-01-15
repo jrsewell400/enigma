@@ -20,6 +20,6 @@ class Encrypt
     offset = @offset.generate_offset(@date)
     key_to_int = string_to_int_converter(key)
     offset_to_int = string_to_int_converter(offset)
-    final_offset = key_to_int.merge(offset_to_int) { |key, oldval, newval| (oldval + newval).to_s }
+    final_offset = key_to_int.merge(offset_to_int) { |key, oldval, newval| oldval + newval }
   end
 end
