@@ -31,8 +31,7 @@ class EncryptTest < Minitest::Test
   end
 
   def test_final_offset_combines_key_and_offset_hashes
-    skip
-    expected = { :A => "03", :B => "27", :C => "73", :D => "20" }
+    expected = { :A => 3, :B => 27, :C => 73, :D => 20 }
     assert_equal expected, @encrypt.final_offset
   end
 end
