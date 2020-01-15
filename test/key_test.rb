@@ -34,7 +34,7 @@ class KeyTest < Minitest::Test
 
   def test_keys_can_be_shifted
     expected = { :A => "02", :B => "27", :C => "71", :D => "15"}
-    assert_equal expected, @new_key.key_shift("02715")
+    assert_equal expected, @new_key.key_shift
   end
 
 end
