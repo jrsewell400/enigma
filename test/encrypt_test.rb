@@ -8,10 +8,14 @@ class EncryptTest < Minitest::Test
 
   def setup
     @encrypt = Encrypt.new("hello world", "02715", "040895")
+    @key = Key.new("02715")
+    @offset = Offset.new
   end
 
-  def test_encrypt_exists
+  def test_it_exists
     assert_instance_of Encrypt, @encrypt
+    assert_instance_of Key, @key
+    assert_instance_of Offset, @offset
   end
 
   def test_encrypt_has_attributes
@@ -20,4 +24,8 @@ class EncryptTest < Minitest::Test
     assert_equal "040895", @encrypt.date
   end
 
+  def test_final_offset_combines_key_and_offset_hashes
+    expected = { :A => "03", :B => "27", :C => "73", :D => "20" }
+    assert_equal expected, @encrypt.final_offset
+  end
 end
