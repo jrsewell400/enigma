@@ -14,4 +14,10 @@ class EncryptTest < Minitest::Test
     assert_instance_of Encrypt, @encrypt
   end
 
+  def test_encrypt_has_attributes
+    assert_equal "hello world", @encrypt.message
+    assert_equal "02715", @encrypt.key
+    assert_equal "040895", @encrypt.date
+  end
+
 end
